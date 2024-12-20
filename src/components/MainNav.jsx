@@ -87,6 +87,18 @@ export default function MainNav() {
                         </Nav>
                         </>
                     ) : (
+                        <>
+                        &nbsp; <Form className="d-flex" onSubmit={handleSearchSubmit}>
+                            <Form.Control
+                                type="search"
+                                placeholder="Search"
+                                className={`me-2 ${submitted && !searchField.trim() ? 'is-invalid' : ''}`}
+                                aria-label="Search"
+                                value={searchField}
+                                onChange={(e) => setSearchField(e.target.value)}
+                            />
+                            <Button type="submit" variant="success">Search</Button>
+                        </Form>&nbsp;
                         <Nav>
                             <Link href="/register" legacyBehavior passHref>
                                 <Nav.Link
@@ -105,6 +117,7 @@ export default function MainNav() {
                                 </Nav.Link>
                             </Link>
                         </Nav>
+                        </>
                     )}
                     </Navbar.Collapse>
             </Container>
