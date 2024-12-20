@@ -30,7 +30,7 @@ export default function Register(props){
       <br />
       <Form onSubmit={handleSubmit}>
         <Form.Group>
-          <Form.Label>User:</Form.Label><Form.Control type="text" value={user} id="userName" name="userName" onChange={e => setUser(e.target.value)} required />
+          <Form.Label>Username:</Form.Label><Form.Control type="text" value={user} id="userName" name="userName" onChange={e => setUser(e.target.value)} required />
         </Form.Group>
         <br />
         <Form.Group>
