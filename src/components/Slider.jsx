@@ -27,8 +27,7 @@ export default function Slider() {
 
   return (
     <div>
-      {/* Dynamic title */}
-      <h3>Featured recipes:</h3>
+      <h4 style={{ textAlign: 'center' }}>Featured recipes</h4>
 
       {/* Dropdown to select country */}
       <Form.Group controlId="countrySelect">
@@ -44,12 +43,11 @@ export default function Slider() {
         </Form.Select>
       </Form.Group>
 
-      {/* Carousel to display recipes */}
+      {/* Carousel to display featured recipes */}
       {recipes.length > 0 && (
         <Carousel className="mt-4">
           {recipes.map((recipe) => (
             <Carousel.Item key={recipe.idMeal}>
-              {/* Container div to apply dark overlay */}
               <div
                 style={{
                   position: 'relative',
@@ -71,7 +69,6 @@ export default function Slider() {
                     left: '0',
                   }}
                 />
-                {/* Dark background applied to the whole image */}
                 <div
                   style={{
                     position: 'absolute',
@@ -79,7 +76,7 @@ export default function Slider() {
                     left: '0',
                     width: '100%',
                     height: '100%',
-                    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Dark background
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)', 
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'flex-end',
