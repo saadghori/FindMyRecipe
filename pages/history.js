@@ -31,7 +31,7 @@ export default function History() {
 
     return (
         <>
-        <Row className="mt-5">
+        <Row className="m-0">
             <Col md={12} className="text-center">
                 <h2>Search History</h2>
             </Col>
