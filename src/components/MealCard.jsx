@@ -24,7 +24,7 @@ export default function MealCard({mealID}) {
                 <Card.Img
                     variant="top"
                     src={meal.strMealThumb ? meal.strMealThumb : 'https://via.placeholder.com/375x375.png?text=[+Not+Available+]'} />
-                <Card.Title style={{ overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis', marginLeft: '10px', marginTop: '10px',}}>{meal.strMeal || 'N/A'}</Card.Title>
+                <Card.Title style={{ overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis', marginLeft: '10px', marginTop: '10px', marginRight: '10px', }}>{meal.strMeal || 'N/A'}</Card.Title>
                 <Card.Text style={{ marginLeft: '10px',}}>
                     Category: {meal.strCategory || 'N/A'}<br />
                     Area: {meal.strArea || 'N/A'}<br />
