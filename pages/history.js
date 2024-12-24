@@ -4,6 +4,8 @@ import { useRouter } from 'next/router';
 import { Card, ListGroup, Button } from 'react-bootstrap';
 import styles from '@/styles/History.module.css';
 import { removeFromHistory } from '@/lib/userData';
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 export default function History() {
     const [searchHistory, setSearchHistory] = useAtom(searchHistoryAtom);
@@ -29,6 +31,12 @@ export default function History() {
 
     return (
         <>
+        <Row className="mt-5">
+            <Col md={12} className="text-center">
+                <h2>Search History</h2>
+            </Col>
+        </Row>
+        <br/><br/>
         {parsedHistory.length === 0 ? (
             <Card>
                 <h4>Nothing Here</h4>

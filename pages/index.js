@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'; 
 import { Container, Row, Col, Spinner, Alert } from 'react-bootstrap'; 
-import MealCardDetail from '@/src/components/MealCardDetail'; 
+import Slider from '@/src/components/Slider';  
 
 export default function Home() { 
   const [randomMeal, setRandomMeal] = useState(null); 
@@ -17,7 +17,7 @@ export default function Home() {
         
         // Check if we received the meal data
         if (data && data.meals && data.meals[0]) { 
-          setRandomMeal(data.meals[0]); // Set the first meal from the API response
+          setRandomMeal(data.meals[0]);
           console.log("Random Meal Set:", data.meals[0]);
         } else { 
           console.error("No meal data found"); 
@@ -25,7 +25,7 @@ export default function Home() {
       } catch (error) { 
         console.error("Error fetching data:", error); 
       } finally { 
-        setLoading(false); // Set loading to false once the fetch completes 
+        setLoading(false); 
       } 
     }; 
 
@@ -40,30 +40,7 @@ export default function Home() {
         </Col>
       </Row>
       <br/><br/>
-      <Row className="mt-3">
-        <Col md={12} className="text-left">
-          <strong>Featured Recipe:</strong>
-        </Col>
-      </Row>
-      {loading ? ( 
-        <Row className="mt-5"> 
-          <Col md={12} className="d-flex justify-content-center"> 
-            <Spinner animation="border" role="status" /> 
-          </Col> 
-        </Row> 
-      ) : randomMeal ? ( 
-        <Row className="mt-5"> 
-          <Col md={12}> 
-            <MealCardDetail mealID={randomMeal.idMeal} /> 
-          </Col> 
-        </Row> 
-      ) : ( 
-        <Row className="mt-5"> 
-          <Col md={12}> 
-            <Alert variant="danger">No meal found</Alert>
-          </Col> 
-        </Row> 
-      )} 
+      <Slider />
     </Container> 
   ); 
 }

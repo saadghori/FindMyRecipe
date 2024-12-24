@@ -12,6 +12,12 @@ export default function Favourites() {
 
     return (
         <>
+        <Row className="mt-5">
+            <Col md={12} className="text-center">
+                <h2>Favourites</h2>
+            </Col>
+        </Row>
+        <br/><br/>
         {favouritesList && (
             <Row className="gy-4">
                 {favouritesList.length > 0 ? (
