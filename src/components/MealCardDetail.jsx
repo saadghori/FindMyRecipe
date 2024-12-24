@@ -1,3 +1,5 @@
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Link from 'next/link';
@@ -49,6 +51,12 @@ export default function MealCardDetail({ mealID }) {
     }
     
     return (
+        <>
+        <Row className="m-0">
+            <Col md={12} className="text-center">
+                <h2>{meal?.strMeal || 'N/A'}</h2>
+            </Col>
+        </Row>
         <Card>
             {meal?.strMealThumb && (
                 <Card.Img
@@ -60,7 +68,6 @@ export default function MealCardDetail({ mealID }) {
                 />
             )}
             <Card.Body>
-                <Card.Title>{meal?.strMeal || 'N/A'}</Card.Title>
                 <Card.Text>
                     <strong>Category:</strong> {meal?.strCategory || 'N/A'}<br />
                     <strong>Area:</strong> {meal?.strArea || 'N/A'}<br />
@@ -98,5 +105,6 @@ export default function MealCardDetail({ mealID }) {
                 </Card.Text>
             </Card.Body>
         </Card>
+        </>
     );
 }
