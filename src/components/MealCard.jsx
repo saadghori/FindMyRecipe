@@ -24,14 +24,13 @@ export default function MealCard({mealID}) {
                 <Card.Img
                     variant="top"
                     src={meal.strMealThumb ? meal.strMealThumb : 'https://via.placeholder.com/375x375.png?text=[+Not+Available+]'} />
-                <Card.Title>{meal.strMeal || 'N/A'}</Card.Title>
-                <Card.Text>
+                <Card.Title style={{ overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis', marginLeft: '10px', marginTop: '10px',}}>{meal.strMeal || 'N/A'}</Card.Title>
+                <Card.Text style={{ marginLeft: '10px',}}>
                     Category: {meal.strCategory || 'N/A'}<br />
                     Area: {meal.strArea || 'N/A'}<br />
-                    Tags: {meal.strTags ? meal.strTags : 'N/A'}<br />
                 </Card.Text>
                 <Link href={`/meal/${meal.idMeal}`} passHref>
-                    <Button variant="primary">View Recipe</Button>
+                    <Button style={{ backgroundColor: '#343a40', marginLeft: '10px', marginBottom: '10px',}} variant="primary">View Recipe</Button>
                 </Link>
             </Card>
         </>
